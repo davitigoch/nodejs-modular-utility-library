@@ -1,0 +1,14 @@
+{
+  "name": "modular-utility-library",
+  "version": "1.0.0",
+  "description": "A Node.js utility library demonstrating CommonJS and ES2015 modules",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["modules", "commonjs", "es2015", "nodejs", "utility"],
+  "author": "Irina",
+  "license": "MIT"
+}
