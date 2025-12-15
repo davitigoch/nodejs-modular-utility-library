@@ -1,27 +1,27 @@
-# Modular Node.js Utility Library
+Modular Node.js Utility Library
 
 A demonstration project showcasing both CommonJS and ES2015 (ES6) module systems in Node.js.
 
-## Project Structure
+Project Structure
 
-```
-├── lib/                    # CommonJS modules
-│   ├── mathUtils.cjs      # Mathematical utility functions
-│   └── stringUtils.cjs    # String manipulation utilities
-├── src/                   # ES2015 modules  
-│   ├── arrayUtils.mjs     # Array manipulation utilities
-│   └── dateUtils.mjs      # Date/time utilities
-├── index.js               # Main entry point demonstrating module interaction
-├── package.json           # Project configuration
-└── README.md              # This file
-```
 
-## Module Examples
+├── lib/                    CommonJS modules
+│   ├── mathUtils.cjs       Mathematical utility functions
+│   └── stringUtils.cjs     String manipulation utilities
+├── src/                    ES2015 modules  
+│   ├── arrayUtils.mjs      Array manipulation utilities
+│   └── dateUtils.mjs       Date/time utilities
+├── index.js                Main entry point demonstrating module interaction
+ package.json               Project configuration
+README.md                   This file
 
-### CommonJS Modules (`lib/`)
 
-**mathUtils.cjs** - Demonstrates named exports:
-```javascript
+Module Examples
+
+CommonJS Modules (`lib/`)
+
+mathUtils.cjs- Demonstrates named exports:
+javascript
 module.exports = {
     add,
     subtract,
@@ -29,49 +29,49 @@ module.exports = {
     divide,
     factorial
 };
-```
 
-**stringUtils.cjs** - Demonstrates default + named exports:
-```javascript
+
+stringUtils.cjs - Demonstrates default + named exports:
+javascript
 // Default export
 module.exports = StringFormatter;
 
 // Additional named exports
 module.exports.isPalindrome = isPalindrome;
 module.exports.countWords = countWords;
-```
 
-### ES2015 Modules (`src/`)
 
-**arrayUtils.mjs** - Demonstrates named exports and aliases:
-```javascript
+ ES2015 Modules (`src/`)
+
+arrayUtils.mjs - Demonstrates named exports and aliases:
+javascript
 export function removeDuplicates(arr) { /* ... */ }
 export function shuffle(arr) { /* ... */ }
 
 // Named export with alias
 export { removeDuplicates as unique };
-```
 
-**dateUtils.mjs** - Demonstrates default + named exports:
-```javascript
+
+dateUtils.mjs - Demonstrates default + named exports:
+javascript
 // Named exports
 export const getCurrentTimestamp = () => Date.now();
 export const isLeapYear = (year) => /* ... */;
 
 // Default export
 export default DateHelper;
-```
 
-### Import Examples in `index.js`
 
-**CommonJS imports:**
-```javascript
+ Import Examples in `index.js`
+
+CommonJS imports:
+javascript
 const mathUtils = require('./lib/mathUtils.cjs');
 const { isPalindrome, countWords } = require('./lib/stringUtils.cjs');
-```
 
-**ES2015 imports:**
-```javascript
+
+ES2015 imports:
+javascript
 import { removeDuplicates, shuffle, chunk } from './src/arrayUtils.mjs';
 import DateHelper, { getCurrentTimestamp } from './src/dateUtils.mjs';
 
@@ -80,15 +80,15 @@ import {
     removeDuplicates as removeDups,
     shuffle as randomize 
 } from './src/arrayUtils.mjs';
-```
 
-## Why Node.js Supports Two Module Systems
+
+ Why Node.js Supports Two Module Systems
 
 Node.js supports both CommonJS and ES2015 modules for several important reasons:
 
-### Historical Context
-- **CommonJS** was Node.js's original module system, designed specifically for server-side JavaScript
-- **ES2015 modules** were later standardized by ECMAScript as the official JavaScript module syntax
+Historical Context
+- CommonJS was Node.js's original module system, designed specifically for server-side JavaScript
+- ES2015 modules were later standardized by ECMAScript as the official JavaScript module syntax
 - Node.js needed to maintain backward compatibility while adopting the new standard
 
 ### Technical Differences
@@ -96,8 +96,8 @@ Node.js supports both CommonJS and ES2015 modules for several important reasons:
 | Feature | CommonJS | ES2015 Modules |
 |---------|----------|----------------|
 | **Syntax** | `require()` / `module.exports` | `import` / `export` |
-| **Loading** | Synchronous | Asynchronous |
-| **Analysis** | Runtime | Static (compile-time) |
+ Loading  Synchronous  Asynchronous 
+ Analysis Runtime  Static (compile-time) |
 | **Tree Shaking** | Limited | Full support |
 | **Conditional Loading** | Yes | Limited |
 | **File Extension** | `.js` | `.mjs` or `.js` with `"type": "module"` |
