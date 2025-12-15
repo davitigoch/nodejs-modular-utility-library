@@ -91,33 +91,33 @@ Historical Context
 - ES2015 modules were later standardized by ECMAScript as the official JavaScript module syntax
 - Node.js needed to maintain backward compatibility while adopting the new standard
 
-### Technical Differences
+ Technical Differences
 
 | Feature | CommonJS | ES2015 Modules |
 |---------|----------|----------------|
-| **Syntax** | `require()` / `module.exports` | `import` / `export` |
+| Syntax | `require()` / `module.exports` | `import` / `export` |
  Loading  Synchronous  Asynchronous 
  Analysis Runtime  Static (compile-time) |
-| **Tree Shaking** | Limited | Full support |
-| **Conditional Loading** | Yes | Limited |
-| **File Extension** | `.js` | `.mjs` or `.js` with `"type": "module"` |
+| Tree Shaking | Limited | Full support |
+| Conditional Loading | Yes | Limited |
+| File Extension | `.js` | `.mjs` or `.js` with `"type": "module"` |
 
-### When to Use Each System
+When to Use Each System
 
-#### Use **CommonJS** when:
+ Use CommonJS when:
 - ✅ Working with legacy Node.js codebases
 - ✅ You need conditional/dynamic imports based on runtime conditions
 - ✅ Working with libraries that only support CommonJS
 - ✅ Building traditional Node.js applications or APIs
 - ✅ You need synchronous module loading
 
-**Example use cases:**
+Example use cases:
 - Express.js server applications
 - Command-line tools
 - Legacy npm packages
 - Configuration files that need dynamic loading
 
-#### Use **ES2015 Modules** when:
+Use ES2015 Modules when:
 - ✅ Building modern JavaScript applications
 - ✅ You want better tree-shaking and bundle optimization
 - ✅ Creating libraries meant for both browser and Node.js
@@ -125,16 +125,16 @@ Historical Context
 - ✅ You want static analysis benefits (better IDE support, linting)
 - ✅ Building applications with modern build tools (Webpack, Vite, etc.)
 
-**Example use cases:**
+Example use cases:
 - Frontend applications
 - Modern full-stack applications
 - npm packages for modern ecosystems
 - TypeScript projects
 - Applications requiring optimal bundling
 
-## Running the Project
+Running the Project
 
-1. **Install dependencies** (if any):
+1. **Intsall dependencies (if any):
    ```bash
    npm install
    ```
@@ -148,15 +148,15 @@ Historical Context
    node index.js
    ```
 
-## Key Learning Points
+ Key Learning Points
 
-1. **Interoperability**: Modern Node.js can use both module systems in the same project
-2. **File Extensions**: Use `.mjs` for ES modules or set `"type": "module"` in package.json
-3. **Import Syntax**: ES modules support various import patterns including renamed imports
-4. **Export Patterns**: Both systems support named and default exports, but with different syntax
-5. **Static Analysis**: ES modules enable better tooling and optimization opportunities
+1. Interoperability: Modern Node.js can use both module systems in the same project
+2. File Extensions: Use `.mjs` for ES modules or set `"type": "module"` in package.json
+3. Import Syntax: ES modules support various import patterns including renamed imports
+4. Export Patterns: Both systems support named and default exports, but with different syntax
+5. Static Analysis: ES modules enable better tooling and optimization opportunities
 
-## Future Considerations
+ Future Considerations
 
 - ES2015 modules are the future standard for JavaScript
 - New projects should prefer ES modules when possible
